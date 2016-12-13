@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Contacts</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script>
+				document.getElementById('feedback-form').addEventListener('submit', function(evt){
+				  var http = new XMLHttpRequest(), f = this;
+				  evt.preventDefault();
+				  http.open("POST", "../contacts.php", true);
+				  http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+				  http.send("nameFF=" + f.nameFF.value + "&contactFF=" + f.contactFF.value + "&messageFF=" + f.messageFF.value);
+				  http.onreadystatechange = function() {
+				    if (http.readyState == 4 && http.status == 200) {
+				      alert('Your message has been sent .\nThanks!');
+				      f.messageFF.removeAttribute('value'); // очистить поле сообщения (две строки)
+				      f.messageFF.value='';
+				    }
+				  }
+				  http.onerror = function() {
+				    alert('Sorry, your data is not sent');
+				  }
+				}, false);
+				</script>
+</head>
+<body>
+	<div class="contentBox2">
+		<a href="/" class="closeBtn fa fa-times"></a>
+
+		<div class="wrap contact">
+		<h2 class="name2">Feedback</h2>
+
+			<div class="col-sm-6">
+				<form method="POST" action="" id="feedback-form">
+					<p>What is your name? :</p>
+					<input type="text" name="nameFF" required placeholder="Your name" x-autocompletetype="name">
+					<p>Your email:</p>
+					<input type="email" name="contactFF" required placeholder="Your email" x-autocompletetype="email">
+					<p>Your message:</p>
+					<textarea name="messageFF" required rows="3"></textarea>
+					<input type="submit" value="Send">
+				</form>
+			</div>
+
+			<div class="col-sm-6">
+			  
+			  
+				<div class="row">
+				<h2 class="v_l">Victoria Labach</h2>
+				<!--<p>If you would like to book in please send me a text on +447771236283 and I will get back to you.</p>-->
+					<div class="col-sm-2 col-xs-4"><p>Phone:</p></div>
+					<div class="col-sm-10 col-xs-8"><a href="tel:+44 757 626 09 82" class="link1">+44 757 626 09 82</a></div>
+				</div>
+			    <div class="row">
+					<div class="col-sm-2 col-xs-4"><p>E-mail:</p></div>
+					<div class="col-sm-10 col-xs-8"><a href="mailto:victoria_labach@ukr.net" class="link1">victoria_labach@ukr.net</a></div>
+				</div>
+				<div class="row">
+					<div class="col-sm-2 col-xs-4"><p>Facebook:</p></div>
+					<div class="col-sm-10 col-xs-8"><a target="_blank" href="https://www.facebook.com/profile.php?id=100005086454314&fref=pb&hc_location=friends_tab&pnref=friends.all" class="link1">Victoria Labach</a></div>
+				</div>
+			  </div>
+			</div>
+		
+	</div>
+</body>
+</html>

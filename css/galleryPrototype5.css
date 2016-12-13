@@ -1,0 +1,91 @@
+#galleryPrototype5{
+    position: relative;
+    width: 1170px;
+    margin: 0 auto;
+    left: 0px;
+}
+#galleryPrototype5 #mainHolder{
+    width: 175px;
+    height: 100%;
+    display: block;
+    position: relative;
+    float: left;
+    margin-right: 25px;
+}
+#galleryPrototype5 #mainHolder .title{
+    width: 175px;
+    height: 155px;
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+#galleryPrototype5 #mainHolder .controlHolder{
+    width: 175px;
+    /*height: 315px;*/
+    padding-bottom: 30px;
+    display: block;
+    position: relative;
+}
+#galleryPrototype5 .closeItem{
+    display: block;
+    position: absolute;
+}
+
+#fullPreviewHolder{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    width: 970px;
+    height: 490px;
+    float: left;
+}
+#fullPreviewHolder .primaryFullImage{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+#fullPreviewHolder .primaryFullImage img{
+    position: relative;
+}
+#fullPreviewHolder .secondaryFullImage{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+#fullPreviewHolder .secondaryFullImage img{
+    position: relative;
+}
+#fullPreviewHolder .fullPreviewLoader{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+    top: 0;
+    left: 0;
+    z-index: 4;
+}
+#mainPagination{
+    padding: 24px;
+    
+}
+#mainPagination > ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+#mainPagination > ul > li{
+    width: 38px;
+    height: 38px;
+    float: left;
+    margin: 2px;
+    cursor: pointer;
+}
+
+
